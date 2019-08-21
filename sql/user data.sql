@@ -1,0 +1,10 @@
+ALTER TABLE `user` AUTO_INCREMENT = 1;
+INSERT INTO `user` (`id`, `email`,`password`,`role_id`) VALUES (1,'arcu@sodalesnisi.edu',7068,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('mollis.nec@malesuadavel.edu',6433,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('dolor.Fusce.mi@liberoatauctor.co.uk',6152,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('tortor@inaliquet.net',2556,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('aliquam@quisdiam.edu',5965,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('iaculis@Nullamvitaediam.net',6577,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('sit.amet.diam@sitamet.edu',1282,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('Aliquam@Nullamvitaediam.net',6577,1);
+INSERT INTO `user` (`email`,`password`, `role_id`) VALUES ('vader@gmail.com',1234,2);

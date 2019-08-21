@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#project-name {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+    font-style: italic;
+    color: rgba(230, 230, 230, 0.9);
+    top: 25%;
+    left: 3%;
+}
+
+#container {
+
+    background: rgb(235, 235, 235);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-width: 870px;
+}
+
+.content {
+    background: #f9f9f9;
+    border-radius: 15px;
+
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+
+    min-height: 80vh;
+
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    z-index: 1;
+    min-width: 530px;
+}
+
+.image-greeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.image-greeting .image-of-status {
+    height: auto;
+    width: 50%;
+    border-radius: 100%;
+}
+
+.image-greeting .status-info {
+    display: flex;
+    width: 35%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+    margin-left: 3%;
+}
+
+.greeting {
+    width: 500px;
+    text-align: center;
+}
+
+.element {
+    display: flex;
+    justify-content: center;
+}
+
+.form-input {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 70%;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, .175) !important;
+    align-items: center;
+    background: rgb(235, 235, 235);
+    padding: 20px 20px;
+}
+
+.form-input .btn{
+    margin-top: 15px;
+}
+
+.input-field {
+    font-family: georgia, garamond, serif;
+    font-style: italic;
+    border-radius: 5px;
+
+    width: 90%;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 1% 0;
+    width: 100%;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, .175) !important;
+    border-radius: 7px;
+    padding: 2%;
+    min-width: 520px;
+}
+
+.btn:hover {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+#all_subjects {
+    display: none;
+    margin: 5px 0;
+    border: 10px solid rgba(1, 1, 1, 0.3);
+    border-radius: inherit;
+}
+
+.subject-field {
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    padding: 8px;
+    border-radius: 9px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .1) !important;
+    margin: 5px 0;
+}
+
+.subject-mark-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 8px;
+    border-radius: 9px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .1) !important;
+    margin: 5px 0;
+}
+
+.no-spinners {
+    -moz-appearance: textfield;
+}
+
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#dropdown {
+    padding: 0;
+    font-size: 18px;
+}
+
+.dropdown {
+    width: 130px;
+}
+
+#dropdown li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: left;
+    padding: 14px 16px 14px 2px;
+    text-decoration: none;
+    float: left;
+}
+
+#dropdown li a:hover, .dropdown:hover .dropbtn {
+    background-color: #00ff006e;
+}
+
+#dropdown li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    padding-left: 0;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    min-width: 130px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    justify-content: start;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    left: 100%;
+    width: 100%;
+}
+
+.search input[type="text"] {
+    background: rgb(235, 235, 235);
+    display: inline-block;
+    width: 50%;
+    margin-left: 5%;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#message {
+    color: red;
+    margin-top: 25%;
+    display: none;
+}
+
+.facultyInformation{
+    border: 4px double rgba(0, 0, 0, .775);
+    padding: 20px 5px;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, .175) !important;
+    border-radius: 3px;
+    margin-bottom: 2%;
+}

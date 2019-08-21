@@ -1,0 +1,58 @@
+package by.epam.pialetskialiaksei.sql.builder;
+
+import by.epam.pialetskialiaksei.Fields;
+import by.epam.pialetskialiaksei.entity.Status;
+import by.epam.pialetskialiaksei.entity.User;
+import by.epam.pialetskialiaksei.sql.builder.api.Builder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class UserBuilder extends Builder<User> {
+    private final static Logger LOG = LogManager
+            .getLogger(UserBuilder.class);
+    @Override
+    public User build(ResultSet rs) {
+        User user = new User();
+        try {
+            user.setId(rs.getInt(Fields.ENTITY_ID));
+            user.setEmail(rs.getString(Fields.USER_EMAIL));
+            user.setPassword(rs.getString(Fields.USER_PASSWORD));
+            user.setRole(rs.getString(Fields.USER_ROLE));
+            user.setStatus(new StatusBuilder().build(rs));
+        } catch (SQLException e) {
+            LOG.error("Can not unmarshal result set to user", e);
+        }
+        return user;
+    }
+
+    @Override
+    public User buildForeign(ResultSet rs) {
+        User user = new User();
+        try {
+            user.setId(rs.getInt(Fields.USER_FOREIGN_KEY_ID));
+            user.setEmail(rs.getString(Fields.USER_EMAIL));
+            user.setPassword(rs.getString(Fields.USER_PASSWORD));
+            user.setRole(rs.getString(Fields.USER_ROLE));
+            user.setStatus(new StatusBuilder().build(rs));
+        } catch (SQLException e) {
+            LOG.error("Can not unmarshal result set to user", e);
+        }
+        return user;
+    }
+
+//    public User buildShort(ResultSet rs){
+//        User user = new User();
+//        try {
+//            user.setId(rs.getInt(Fields.USER_FOREIGN_KEY_ID));
+//            user.setFirstName(rs.getString(Fields.USER_FIRST_NAME));
+//            user.setLastName(rs.getString(Fields.USER_LAST_NAME));
+//            user.setEmail(rs.getString(Fields.USER_EMAIL));
+//        } catch (SQLException e) {
+//            LOG.error("Can not unmarshal result set to user", e);
+//        }
+//        return user;
+//    }
+}

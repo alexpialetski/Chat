@@ -1,0 +1,47 @@
+<!-- Header - top area. -->
+
+<div class="header">
+    <a href="controller?command=viewWelcome" class="logo default"><fmt:message key="header.logo"/></a>
+    <ul class="header-right">
+        <ul id="dropdown">
+            <li class="dropdown">
+                <img style="float:left; max-height: 28px; width: auto; margin-right: 3px; margin-left: 0;" src="images/Globe.png"/>
+                <a href="javascript:void(0)" class="dropbtn"><fmt:message key="header.language"/></a>
+                <ul class="dropdown-content">
+                    <c:choose>
+                        <c:when test="${not empty sessionScope.prevCommand}">
+                            <a href="controller?command=${sessionScope.prevCommand}&sessionLocale=en">
+                                <li><img class="language-icon" src="images/Britain.png"/><fmt:message key="header.language.en"/></li>
+                            </a>
+                            <a href="controller?command=${sessionScope.prevCommand}&sessionLocale=ru">
+                                <li><img class="language-icon" src="images/Russia.png"/><fmt:message key="header.language.ru"/></li>
+                            </a>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="welcome.jsp?sessionLocale=en">
+                                <li><img class="language-icon" src="images/Britain.png"/><fmt:message key="header.language.en"/></li>
+                            </a>
+                            <a href="welcome.jsp?sessionLocale=ru">
+                                <li><img class="language-icon" src="images/Russia.png"/><fmt:message key="header.language.ru"/></li>
+                            </a>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>
+            </li>
+        </ul>
+        <c:choose>
+            <c:when test="${empty sessionScope.userRole}">
+                <form class="form" action="controller" method="POST">
+                    <input type="hidden" name="command" value="viewLogin">
+                    <input class="default" type="submit" value="<fmt:message key="header.login"/>">
+                </form>
+            </c:when>
+            <c:otherwise>
+                <form class="form" action="controller" method="POST">
+                    <input type="hidden" name="command" value="logout">
+                    <input class="default" type="submit" value="<fmt:message key="header.logout"/>">
+                </form>
+            </c:otherwise>
+        </c:choose>
+    </ul>
+</div>
